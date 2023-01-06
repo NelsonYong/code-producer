@@ -1,20 +1,49 @@
-import useScale from '@/hooks/useScale'
 import { Outlet } from 'umi'
+import { Col, Layout, Row } from 'antd'
+import { GithubOutlined } from '@ant-design/icons'
 
-export default function Layout() {
-	// useScale({
-	// 	useWidthHeightMini: true,
-	// })
+const { Header, Footer, Sider, Content } = Layout
+
+export default function LayoutRoot() {
 	return (
-		<div className="h-screen w-screen">
-			<div className="w-full  bg-blue-500 ">
-				<span className="h-12 flex flex-row items-center w-1/6 p-2 text-white font-thin	">
-					Code Producer
-				</span>
-			</div>
-			<div className="h-full">
+		<Layout>
+			<Header>
+				<div className="w-full h-ful">
+					<Row>
+						<Col flex={'100px'}>
+							<span className="h-full  flex flex-row items-center  text-white font-thin	">
+								Code Producer
+							</span>
+						</Col>
+						<Col flex={'1'}></Col>
+						<Col
+							flex={'100px'}
+							className="text-white flex flex-row items-center text-xl"
+						>
+							<GithubOutlined
+								onClick={() => {
+									window.open(
+										'https://github.com/NelsonYong/code-producer',
+										'_code-producer'
+									)
+								}}
+							/>
+						</Col>
+					</Row>
+				</div>
+			</Header>
+			<Content
+				style={{
+					padding: 24,
+					margin: 0,
+					minHeight: 1080,
+				}}
+			>
 				<Outlet />
-			</div>
-		</div>
+			</Content>
+			<Footer>
+				<div className="text-center opacity-50">@YongGit</div>
+			</Footer>
+		</Layout>
 	)
 }

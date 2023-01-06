@@ -1,9 +1,9 @@
 import Editor, { EditorProps } from '@monaco-editor/react'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import PageContext from '../PageContext'
 
-const JsonView = () => {
-	const { currentCode, setCurrentCode, select } = useContext(PageContext)
+const ProTableView = () => {
+	const { currentCode, targetSelect } = useContext(PageContext)
 	const enditor = useRef<any>()
 	const editorDidMountHandle: EditorProps['onMount'] = (editor) => {
 		enditor.current = editor
@@ -12,10 +12,27 @@ const JsonView = () => {
 		}, 500)
 	}
 
+	const template = `
+  /**
+       [{
+        title: "日期",
+        dataIndex: "businessDate",
+        search: false,
+      },
+      {
+        title: "大分类",
+        dataIndex: "firstCategoryName",
+        search: false,
+      }]
+*/
+      <ProTable
+      column={${currentCode}}}
+      />
+  `
 	return (
 		<Editor
 			height="800px"
-			language={select?.language}
+			language={targetSelect?.language}
 			options={{
 				automaticLayout: true,
 				minimap: {
@@ -26,10 +43,9 @@ const JsonView = () => {
 				formatOnType: true,
 			}}
 			theme="vs-dark"
-			value={currentCode ?? ''}
+			value={template ?? ''}
 			onMount={editorDidMountHandle}
 			onChange={(value) => {
-				setCurrentCode?.(value)
 				setTimeout(function () {
 					enditor.current.getAction('editor.action.formatDocument').run()
 				}, 500)
@@ -38,4 +54,4 @@ const JsonView = () => {
 	)
 }
 
-export default JsonView
+export default ProTableView

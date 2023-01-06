@@ -7,9 +7,12 @@ export default defineConfig({
 	publicPath: '/code-producer/site/',
 	plugins: ['@umijs/plugins/dist/tailwindcss'],
 	outputPath: 'site',
+	history: {
+		type: 'browser',
+	},
 	routes: [
 		{
-			path: '/product-view',
+			path: '/',
 			name: 'product-view',
 			icon: 'home',
 			component: './ProductView',

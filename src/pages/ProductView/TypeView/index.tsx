@@ -1,5 +1,5 @@
 import Editor, { EditorProps } from '@monaco-editor/react'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useMemo, useRef, useState } from 'react'
 import PageContext from '../PageContext'
 import {
 	InputData,
@@ -33,27 +33,56 @@ async function quicktypeJSON(
 }
 
 const TypeView = () => {
-	const { currentCode, setCurrentCode } = useContext(PageContext)
+	const { currentCode, targetSelect } = useContext(PageContext)
 	const [typeCode, setTypeCode] = useState<string>()
 
-	const enditor = useRef()
+	const enditor = useRef<any>()
 	const viewDidMountHandle: EditorProps['onMount'] = (editor) => {
 		enditor.current = editor
-		// setTimeout(function () {
-		// 	editor.getAction('editor.action.formatDocument').run()
-		// }, 500)
+		setTimeout(function () {
+			editor.getAction('editor.action.formatDocument').run()
+		}, 500)
 	}
 
 	useAsyncEffect(async () => {
+		console.log('进入')
+		console.log(currentCode)
+
 		const { lines: typescriptResult } = await quicktypeJSON(
 			'typescript',
 			'Result',
 			currentCode ?? ''
 		)
 		setTypeCode(typescriptResult.join('\n'))
+		setTimeout(function () {
+			enditor.current?.getAction('editor.action.formatDocument').run()
+		}, 500)
 	}, [currentCode])
 
-	// const data = []
+	useEffect(() => {
+		console.log(typeCode)
+	}, [typeCode])
+
+	const editor = useMemo(() => {
+		return (
+			<Editor
+				height="800px"
+				language={targetSelect?.language}
+				options={{
+					automaticLayout: true,
+					wordWrap: 'on',
+					formatOnPaste: true,
+					formatOnType: true,
+					readOnly: true,
+				}}
+				theme="vs-dark"
+				value={typeCode ?? ''}
+				onMount={viewDidMountHandle}
+			/>
+		)
+	}, [typeCode])
+
+	const data = []
 	// Array.from(
 	// 	document
 	// 		.getElementsByTagName('table')[1]
@@ -71,25 +100,7 @@ const TypeView = () => {
 	// 	})
 	// console.log(JSON.stringify(data))
 
-	return (
-		<Editor
-			height="100%"
-			language="typescript"
-			options={{
-				automaticLayout: true,
-				minimap: {
-					enabled: false,
-				},
-				wordWrap: 'on',
-				formatOnPaste: true,
-				formatOnType: true,
-				readOnly: true,
-			}}
-			theme="vs-dark"
-			value={typeCode ?? ''}
-			onMount={viewDidMountHandle}
-		/>
-	)
+	return editor
 }
 
 export default TypeView

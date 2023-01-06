@@ -9,8 +9,10 @@
 		"start": "npm run dev"
 	},
 	"dependencies": {
+		"@ant-design/icons": "^4.8.0",
 		"@monaco-editor/react": "^4.4.6",
 		"ahooks": "^3.7.4",
+		"antd": "^5.1.2",
 		"monaco-editor-webpack-plugin": "^7.0.1",
 		"quicktype-core": "^7.0.2",
 		"react-monaco-editor": "^0.51.0",

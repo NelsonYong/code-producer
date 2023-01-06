@@ -3,7 +3,7 @@ import { defineConfig } from 'umi'
 export default defineConfig({
 	npmClient: 'pnpm',
 	tailwindcss: {},
-	base: '/site/',
+	base: '/code-producer/site/',
 	plugins: ['@umijs/plugins/dist/tailwindcss'],
 	outputPath: 'site',
 	routes: [

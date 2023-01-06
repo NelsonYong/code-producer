@@ -4,6 +4,7 @@ export default defineConfig({
 	npmClient: 'pnpm',
 	tailwindcss: {},
 	base: '/code-producer/site/',
+	publicPath: '/code-producer/site/',
 	plugins: ['@umijs/plugins/dist/tailwindcss'],
 	outputPath: 'site',
 	routes: [

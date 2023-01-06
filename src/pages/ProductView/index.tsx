@@ -13,8 +13,8 @@ const ProductView = () => {
 		language: 'json',
 	})
 	const [targetSelect, setTargetSelect] = useState<SelectType>({
-		label: 'Typescript',
-		value: 'typescript',
+		label: 'ProTable',
+		value: 'protable',
 		language: 'typescript',
 	})
 
@@ -105,26 +105,26 @@ const ProductView = () => {
 								}}
 								labelInValue
 								options={[
-									{
-										label: 'Tool Target',
-										options: [
-											{
-												label: 'Typescript',
-												value: 'typescript',
-												language: 'typescript',
-											},
-										],
-									},
 									// {
-									// 	label: 'Business',
+									// 	label: 'Tool Target',
 									// 	options: [
 									// 		{
-									// 			label: 'ProTable',
-									// 			value: 'protable',
+									// 			label: 'Typescript',
+									// 			value: 'typescript',
 									// 			language: 'typescript',
 									// 		},
 									// 	],
 									// },
+									{
+										label: 'Business',
+										options: [
+											{
+												label: 'ProTable',
+												value: 'protable',
+												language: 'typescript',
+											},
+										],
+									},
 								]}
 							/>
 						</div>

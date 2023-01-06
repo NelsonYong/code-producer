@@ -13,26 +13,46 @@ const ProTableView = () => {
 	}
 
 	const template = `
-  /**
-       [{
-        title: "日期",
-        dataIndex: "businessDate",
-        search: false,
-      },
-      {
-        title: "大分类",
-        dataIndex: "firstCategoryName",
-        search: false,
-      }]
-*/
-      <ProTable
-      column={${currentCode}}}
-      />
-  `
+import { useMemo, useState, useRef } from "react";
+import ProTable from "@ant-design/pro-table";
+import type { ActionType, ProColumns } from "@ant-design/pro-table";
+import type { FormInstance } from "antd";
+import useTableRequest from "@/hooks/useTableRequest";
+
+const CompareDetail =()=>{
+
+  const formRef = useRef<FormInstance>();
+  const actionRef = useRef<ActionType>();
+  const request = useTableRequest();
+   
+  const columns = useMemo<ProColumns<any>[]>(()=>({${currentCode}}),[]);
+
+  return (
+    <ProTable
+      formRef={formRef}
+      actionRef={actionRef}
+      rowKey="id"
+      request={async (params) => {
+        const res = await request(fetchAPI, {
+          ...params,
+        });
+        return {
+          ...(res ?? {}),
+          data: res?.data?.map?.((item) => ({
+            ...item
+          })),
+        };
+      }}
+      columns={compareColumns}
+    />
+  );
+
+}
+`
 	return (
 		<Editor
 			height="800px"
-			language={targetSelect?.language}
+			language="javascript"
 			options={{
 				automaticLayout: true,
 				minimap: {

@@ -3,10 +3,10 @@ import { defineConfig } from 'umi'
 export default defineConfig({
 	npmClient: 'pnpm',
 	tailwindcss: {},
-	base: '/code-producer/site/',
-	publicPath: '/code-producer/site/',
+	base: '/code-producer/protable/',
+	publicPath: '/code-producer/protable/',
 	plugins: ['@umijs/plugins/dist/tailwindcss'],
-	outputPath: 'site',
+	outputPath: 'protable',
 	history: {
 		type: 'browser',
 	},

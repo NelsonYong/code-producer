@@ -82,24 +82,6 @@ const TypeView = () => {
 		)
 	}, [typeCode])
 
-	const data = []
-	// Array.from(
-	// 	document
-	// 		.getElementsByTagName('table')[1]
-	// 		.getElementsByTagName('tbody')[0]
-	// 		.getElementsByTagName('tr')
-	// )
-	// 	.filter((item, index) => {
-	// 		return item.childNodes[item.childNodes.length - 2]?.innerText !== ''
-	// 	})
-	// 	?.forEach((item) => {
-	// 		data.push({
-	// 			dataIndex: item.childNodes[0]?.innerText,
-	// 			title: item.childNodes[item.childNodes.length - 2]?.innerText,
-	// 		})
-	// 	})
-	// console.log(JSON.stringify(data))
-
 	return editor
 }
 

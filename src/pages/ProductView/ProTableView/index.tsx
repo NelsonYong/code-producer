@@ -12,6 +12,27 @@ const ProTableView = () => {
 		}, 500)
 	}
 
+	const suggest = `
+  //  Yapi
+  const data = []
+	Array.from(
+		document
+			.getElementsByTagName('table')[1]
+			.getElementsByTagName('tbody')[0]
+			.getElementsByTagName('tr')
+	)
+		.filter((item, index) => {
+			return item.childNodes[item.childNodes.length - 2]?.innerText !== ''
+		})
+		?.forEach((item) => {
+			data.push({
+				dataIndex: item.childNodes[0]?.innerText,
+				title: item.childNodes[item.childNodes.length - 2]?.innerText,
+			})
+		})
+	console.log(JSON.stringify(data))
+  `
+
 	const template = `
 import { useMemo, useState, useRef } from "react";
 import ProTable from "@ant-design/pro-table";
@@ -25,7 +46,7 @@ const CompareDetail =()=>{
   const actionRef = useRef<ActionType>();
   const request = useTableRequest();
    
-  const columns = useMemo<ProColumns<any>[]>(()=>({${currentCode}}),[]);
+  const columns = useMemo<ProColumns<any>[]>(()=>(${currentCode}),[]);
 
   return (
     <ProTable
@@ -63,7 +84,9 @@ const CompareDetail =()=>{
 				formatOnType: true,
 			}}
 			theme="vs-dark"
-			value={template ?? ''}
+			value={
+				currentCode && currentCode?.trim() !== '' ? template ?? '' : suggest
+			}
 			onMount={editorDidMountHandle}
 			onChange={(value) => {
 				setTimeout(function () {

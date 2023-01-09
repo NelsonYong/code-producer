@@ -15,7 +15,15 @@ export default function LayoutRoot({
 			<Header>
 				<Row>
 					<Col flex={'100px'}>
-						<span className={styles.title}>Code Producer</span>
+						<span
+							className={styles.title}
+							onClick={() =>
+								(window.location.href =
+									'https://nelsonyong.github.io/code-producer/site/Guide.html')
+							}
+						>
+							Code Producer
+						</span>
 					</Col>
 					<Col flex={'1'}></Col>
 					<Col flex={'100px'} className={styles.icons}>

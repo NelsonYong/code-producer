@@ -14,6 +14,7 @@ export default defineConfig({
 		entry: {
 			json2ts: 'Json2ProTable/index.tsx',
 			json2protable: 'Json2Ts/index.tsx',
+			guide: 'Guide/index.tsx',
 		},
 	},
 })

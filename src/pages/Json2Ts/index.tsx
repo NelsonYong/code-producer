@@ -31,7 +31,7 @@ const Json2Ts = () => {
 			}}
 		>
 			<LayoutRoot>
-				<Row gutter={12}>
+				<Row gutter={24}>
 					<Col span={12}>
 						<div className={styles.card}>
 							<div className={styles.head}>

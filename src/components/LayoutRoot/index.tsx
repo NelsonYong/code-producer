@@ -42,7 +42,7 @@ export default function LayoutRoot({
 				style={{
 					padding: 24,
 					margin: 0,
-					minHeight: 1080,
+					backgroundColor: '#e8e8e8',
 				}}
 			>
 				{children}

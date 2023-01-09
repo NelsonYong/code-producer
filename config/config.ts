@@ -22,6 +22,7 @@ export default NODE_ENV === 'production'
 			{
 				...config,
 				mpa: {
+					template: './docment.html',
 					entry: {
 						json2ts: 'Json2ProTable/index.tsx',
 						json2protable: 'Json2Ts/index.tsx',

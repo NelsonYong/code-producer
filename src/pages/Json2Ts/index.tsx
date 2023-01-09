@@ -4,6 +4,7 @@ import JsonView from './JsonView'
 import PageContext, { SelectType } from './PageContext'
 import TypeView from './TypeView'
 import styles from './index.less'
+import LayoutRoot from '@/layouts'
 
 const Json2Ts = () => {
 	const [currentCode, setCurrentCode] = useState<string>()
@@ -29,62 +30,64 @@ const Json2Ts = () => {
 				setTargetSelect,
 			}}
 		>
-			<Row>
-				<Col span={12}>
-					<div className={styles.card}>
-						<div className={styles.head}>
-							<Select
-								value={select}
-								style={{ width: 150 }}
-								onChange={(value) => {
-									setSelect(value)
-								}}
-								labelInValue
-								options={[
-									{
-										label: 'Tool Input',
-										options: [
-											{ label: 'Json', value: 'json', language: 'json' },
-										],
-									},
-								]}
-							/>
+			<LayoutRoot>
+				<Row gutter={12}>
+					<Col span={12}>
+						<div className={styles.card}>
+							<div className={styles.head}>
+								<Select
+									value={select}
+									style={{ width: 150 }}
+									onChange={(value) => {
+										setSelect(value)
+									}}
+									labelInValue
+									options={[
+										{
+											label: 'Tool Input',
+											options: [
+												{ label: 'Json', value: 'json', language: 'json' },
+											],
+										},
+									]}
+								/>
+							</div>
+							<div className={styles.body}>
+								<JsonView />
+							</div>
 						</div>
-						<div className={styles.body}>
-							<JsonView />
+					</Col>
+					<Col span={12}>
+						<div className={styles.card}>
+							<div className={styles.head}>
+								<Select
+									value={targetSelect}
+									style={{ width: 120 }}
+									onChange={(value) => {
+										setTargetSelect(value)
+									}}
+									labelInValue
+									options={[
+										{
+											label: 'Tool Target',
+											options: [
+												{
+													label: 'Typescript',
+													value: 'typescript',
+													language: 'typescript',
+												},
+											],
+										},
+									]}
+								/>
+							</div>
+							<div className={styles.body}>
+								<TypeView />
+							</div>
 						</div>
-					</div>
-				</Col>
-				<Col span={12}>
-					<div className={styles.card}>
-						<div className={styles.head}>
-							<Select
-								value={targetSelect}
-								style={{ width: 120 }}
-								onChange={(value) => {
-									setTargetSelect(value)
-								}}
-								labelInValue
-								options={[
-									{
-										label: 'Tool Target',
-										options: [
-											{
-												label: 'Typescript',
-												value: 'typescript',
-												language: 'typescript',
-											},
-										],
-									},
-								]}
-							/>
-						</div>
-						<div className={styles.body}>
-							<TypeView />
-						</div>
-					</div>
-				</Col>
-			</Row>
+					</Col>
+				</Row>
+			</LayoutRoot>
 		</PageContext.Provider>
 	)
 }

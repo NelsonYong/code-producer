@@ -5,7 +5,11 @@ import styles from './index.less'
 
 const Guide = () => {
 	return (
-		<LayoutRoot>
+		<LayoutRoot
+			contentStyle={{
+				minHeight: 1000,
+			}}
+		>
 			<Row gutter={[12, 12]}>
 				<Col span={6}>
 					<Card

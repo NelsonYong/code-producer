@@ -7,8 +7,10 @@ const { Header, Footer, Content } = Layout
 
 export default function LayoutRoot({
 	children,
+	contentStyle,
 }: {
 	children: React.ReactNode
+	contentStyle?: React.CSSProperties
 }) {
 	return (
 		<Layout>
@@ -43,6 +45,7 @@ export default function LayoutRoot({
 					padding: 24,
 					margin: 0,
 					backgroundColor: '#e8e8e8',
+					...contentStyle,
 				}}
 			>
 				{children}

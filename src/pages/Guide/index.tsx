@@ -1,7 +1,7 @@
 import LayoutRoot from '@/components/LayoutRoot'
 import { Card, Col, Row } from 'antd'
 import Meta from 'antd/es/card/Meta'
-import '../base.css'
+import styles from './index.less'
 
 const Guide = () => {
 	return (
@@ -15,13 +15,7 @@ const Guide = () => {
 								'https://nelsonyong.github.io/code-producer/site/Json2Ts.html'
 						}}
 						cover={
-							<div
-								style={{
-									width: '100%',
-									display: 'flex',
-									justifyContent: 'center',
-								}}
-							>
+							<div className={styles.cover}>
 								<img
 									style={{
 										width: 200,
@@ -47,13 +41,7 @@ const Guide = () => {
 								'https://nelsonyong.github.io/code-producer/site/Json2ProTable.html'
 						}}
 						cover={
-							<div
-								style={{
-									width: '100%',
-									display: 'flex',
-									justifyContent: 'center',
-								}}
-							>
+							<div className={styles.cover}>
 								<img
 									style={{
 										width: 200,

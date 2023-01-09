@@ -1,4 +1,4 @@
-import LayoutRoot from '@/layouts'
+import LayoutRoot from '@/components/LayoutRoot'
 import { Col, Row, Select } from 'antd'
 import { useState } from 'react'
 import JsonView from './JsonView'

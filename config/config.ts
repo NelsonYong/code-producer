@@ -11,7 +11,6 @@ export default defineConfig({
 		type: 'browser',
 	},
 	mpa: {
-		// configFromEntryFile: true,
 		entry: {
 			json2ts: 'Json2ProTable/index.tsx',
 			json2protable: 'Json2Ts/index.tsx',

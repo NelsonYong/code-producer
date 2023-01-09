@@ -4,7 +4,7 @@ import JsonView from './JsonView'
 import PageContext, { SelectType } from './PageContext'
 import TypeView from './TypeView'
 import styles from './index.less'
-import LayoutRoot from '@/layouts'
+import LayoutRoot from '@/components/LayoutRoot'
 
 const Json2Ts = () => {
 	const [currentCode, setCurrentCode] = useState<string>()

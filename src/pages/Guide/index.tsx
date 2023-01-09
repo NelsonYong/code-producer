@@ -1,6 +1,7 @@
 import LayoutRoot from '@/components/LayoutRoot'
 import { Card, Col, Row } from 'antd'
 import Meta from 'antd/es/card/Meta'
+import '../base.css'
 
 const Guide = () => {
 	return (

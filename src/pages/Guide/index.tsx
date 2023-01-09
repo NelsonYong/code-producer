@@ -9,15 +9,16 @@ const Guide = () => {
 				<Col span={6}>
 					<Card
 						hoverable
-						style={{
-							height: 240,
-						}}
 						onClick={() => {
 							window.location.href =
 								'https://nelsonyong.github.io/code-producer/site/Json2Ts.html'
 						}}
 						cover={
 							<img
+								style={{
+									width: 200,
+									height: 200,
+								}}
 								alt="example"
 								src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
 							/>
@@ -32,15 +33,16 @@ const Guide = () => {
 				<Col span={6}>
 					<Card
 						hoverable
-						style={{
-							height: 240,
-						}}
 						onClick={() => {
 							window.location.href =
 								'https://nelsonyong.github.io/code-producer/site/Json2ProTable.html'
 						}}
 						cover={
 							<img
+								style={{
+									width: 200,
+									height: 200,
+								}}
 								alt="example"
 								src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
 							/>

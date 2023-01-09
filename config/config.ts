@@ -7,6 +7,11 @@ export default defineConfig({
 	publicPath: '/code-producer/site/',
 	plugins: ['@umijs/plugins/dist/tailwindcss'],
 	outputPath: 'site',
+	favicons: [
+		'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
+		'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
+		'https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg',
+	],
 	history: {
 		type: 'browser',
 	},

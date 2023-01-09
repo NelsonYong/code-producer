@@ -1,5 +1,6 @@
 import { defineConfig } from 'umi'
 const { NODE_ENV } = process.env
+
 const config = defineConfig({
 	npmClient: 'pnpm',
 	tailwindcss: {},
@@ -10,7 +11,6 @@ const config = defineConfig({
 	history: {
 		type: 'browser',
 	},
-
 	define: {
 		NODE_ENV,
 	},

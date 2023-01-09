@@ -3,19 +3,19 @@ import { defineConfig } from 'umi'
 export default defineConfig({
 	npmClient: 'pnpm',
 	tailwindcss: {},
-	base: '/code-producer/protable/',
-	publicPath: '/code-producer/protable/',
+	base: '/code-producer/site/',
+	publicPath: '/code-producer/site/',
 	plugins: ['@umijs/plugins/dist/tailwindcss'],
-	outputPath: 'protable',
+	outputPath: 'site',
 	history: {
 		type: 'browser',
 	},
-	routes: [
-		{
-			path: '/',
-			name: 'product-view',
-			icon: 'home',
-			component: './ProductView',
+	mpa: {
+		// configFromEntryFile: true,
+		// layout: string,
+		entry: {
+			json2ts: 'Json2ProTable/index.tsx',
+			json2protable: 'Json2Ts/index.tsx',
 		},
-	],
+	},
 })

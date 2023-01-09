@@ -5,7 +5,7 @@ import Meta from 'antd/es/card/Meta'
 const Guide = () => {
 	return (
 		<LayoutRoot>
-			<Row>
+			<Row gutter={[12, 12]}>
 				<Col span={6}>
 					<Card
 						hoverable
@@ -14,14 +14,22 @@ const Guide = () => {
 								'https://nelsonyong.github.io/code-producer/site/Json2Ts.html'
 						}}
 						cover={
-							<img
+							<div
 								style={{
-									width: 200,
-									height: 200,
+									width: '100%',
+									display: 'flex',
+									justifyContent: 'center',
 								}}
-								alt="example"
-								src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
-							/>
+							>
+								<img
+									style={{
+										width: 200,
+										height: 200,
+									}}
+									alt="example"
+									src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
+								/>
+							</div>
 						}
 					>
 						<Meta
@@ -38,14 +46,22 @@ const Guide = () => {
 								'https://nelsonyong.github.io/code-producer/site/Json2ProTable.html'
 						}}
 						cover={
-							<img
+							<div
 								style={{
-									width: 200,
-									height: 200,
+									width: '100%',
+									display: 'flex',
+									justifyContent: 'center',
 								}}
-								alt="example"
-								src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
-							/>
+							>
+								<img
+									style={{
+										width: 200,
+										height: 200,
+									}}
+									alt="example"
+									src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
+								/>
+							</div>
 						}
 					>
 						<Meta

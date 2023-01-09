@@ -45,9 +45,6 @@ const TypeView = () => {
 	}
 
 	useAsyncEffect(async () => {
-		console.log('进入')
-		console.log(currentCode)
-
 		const { lines: typescriptResult } = await quicktypeJSON(
 			'typescript',
 			'Result',
@@ -58,10 +55,6 @@ const TypeView = () => {
 			enditor.current?.getAction('editor.action.formatDocument').run()
 		}, 500)
 	}, [currentCode])
-
-	useEffect(() => {
-		console.log(typeCode)
-	}, [typeCode])
 
 	const editor = useMemo(() => {
 		return (

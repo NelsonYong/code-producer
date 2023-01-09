@@ -1,8 +1,9 @@
-import { Select } from 'antd'
+import { Col, Row, Select } from 'antd'
 import { useState } from 'react'
 import JsonView from './JsonView'
 import PageContext, { SelectType } from './PageContext'
 import TypeView from './TypeView'
+import styles from './index.less'
 
 const Json2Ts = () => {
 	const [currentCode, setCurrentCode] = useState<string>()
@@ -28,15 +29,10 @@ const Json2Ts = () => {
 				setTargetSelect,
 			}}
 		>
-			<div className="w-full h-full flex  p-2">
-				<div className="w-1/2 flex-1 mr-1">
-					<div
-						className="w-full h-full pt-2 rounded-xl overflow-hidden "
-						style={{
-							backgroundColor: '#3c3c3c',
-						}}
-					>
-						<div className="pl-2 pb-2">
+			<Row>
+				<Col span={12}>
+					<div className={styles.card}>
+						<div className={styles.head}>
 							<Select
 								value={select}
 								style={{ width: 150 }}
@@ -54,18 +50,14 @@ const Json2Ts = () => {
 								]}
 							/>
 						</div>
-
-						<JsonView />
+						<div className={styles.body}>
+							<JsonView />
+						</div>
 					</div>
-				</div>
-				<div className="w-1/2 flex-1 ml-1">
-					<div
-						className="w-full h-full pt-2 rounded-xl overflow-hidden"
-						style={{
-							backgroundColor: '#3c3c3c',
-						}}
-					>
-						<div className="pl-2 pb-2">
+				</Col>
+				<Col span={12}>
+					<div className={styles.card}>
+						<div className={styles.head}>
 							<Select
 								value={targetSelect}
 								style={{ width: 120 }}
@@ -87,10 +79,12 @@ const Json2Ts = () => {
 								]}
 							/>
 						</div>
-						<TypeView />
+						<div className={styles.body}>
+							<TypeView />
+						</div>
 					</div>
-				</div>
-			</div>
+				</Col>
+			</Row>
 		</PageContext.Provider>
 	)
 }

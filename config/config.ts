@@ -12,7 +12,6 @@ export default defineConfig({
 	},
 	mpa: {
 		// configFromEntryFile: true,
-		// layout: string,
 		entry: {
 			json2ts: 'Json2ProTable/index.tsx',
 			json2protable: 'Json2Ts/index.tsx',

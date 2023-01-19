@@ -19,10 +19,7 @@ export default function LayoutRoot({
 					<Col flex={'100px'}>
 						<span
 							className={styles.title}
-							onClick={() =>
-								(window.location.href =
-									'https://nelsonyong.github.io/code-producer/site/Guide.html')
-							}
+							onClick={() => (window.location.href = '/Guide.html')}
 						>
 							Code Producer
 						</span>
@@ -31,10 +28,7 @@ export default function LayoutRoot({
 					<Col flex={'100px'} className={styles.icons}>
 						<GithubOutlined
 							onClick={() => {
-								window.open(
-									'https://github.com/NelsonYong/code-producer',
-									'_code-producer'
-								)
+								window.open('/code-producer', '_code-producer')
 							}}
 						/>
 					</Col>

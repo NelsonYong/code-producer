@@ -15,8 +15,7 @@ const Guide = () => {
 					<Card
 						hoverable
 						onClick={() => {
-							window.location.href =
-								'https://nelsonyong.github.io/code-producer/site/Json2Ts.html'
+							window.location.href = '/Json2Ts.html'
 						}}
 						cover={
 							<div className={styles.cover}>
@@ -41,8 +40,7 @@ const Guide = () => {
 					<Card
 						hoverable
 						onClick={() => {
-							window.location.href =
-								'https://nelsonyong.github.io/code-producer/site/Json2ProTable.html'
+							window.location.href = '/Json2ProTable.html'
 						}}
 						cover={
 							<div className={styles.cover}>

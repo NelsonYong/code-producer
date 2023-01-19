@@ -4,8 +4,8 @@ const { NODE_ENV } = process.env
 const config = defineConfig({
 	npmClient: 'pnpm',
 	tailwindcss: {},
-	base: NODE_ENV === 'production' ? '/code-producer/site/' : '',
-	publicPath: '/code-producer/site/',
+	// base: NODE_ENV === 'production' ? '/code-producer/site/' : '',
+	// publicPath: '/code-producer/site/',
 	plugins: ['@umijs/plugins/dist/tailwindcss'],
 	outputPath: 'site',
 	history: {

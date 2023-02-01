@@ -46,7 +46,10 @@ const CompareDetail =()=>{
   const actionRef = useRef<ActionType>();
   const request = useTableRequest();
    
-  const columns = useMemo<ProColumns<any>[]>(()=>(${currentCode}),[]);
+  const columns = useMemo<ProColumns<any>[]>(()=>(${currentCode?.replace(
+		/\'/g,
+		''
+	)}),[]);
 
   return (
     <ProTable
@@ -64,7 +67,7 @@ const CompareDetail =()=>{
           })),
         };
       }}
-      columns={compareColumns}
+      columns={columns}
     />
   );
 
